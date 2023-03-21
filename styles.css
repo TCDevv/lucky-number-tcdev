@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to right, lightblue, lightpink);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 50px 0;
+  overflow-y: auto;
+}
+
+.mycontainer {
+  height: 50%;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.mycontainer .title {
+  color: darkorange;
+}
+
+.mycontainer .title > h1 {
+  overflow: hidden;
+  font-weight: bold;
+  margin: 0;
+  height: 50px;
+}
+
+.mycontainer .number-container {
+  display: flex;
+  justify-content: center;
+}
+.mycontainer .number {
+  font-size: 4.5rem;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: lightcoral;
+  margin: 0 20px;
+  animation: jump 1s ease-in-out infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.mycontainer .action {
+  width: 50%;
+  height: fit-content;
+}
+
+.mycontainer .action > button {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: fit-content;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: lightskyblue;
+  font-weight: bold;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 22%), 0 0px 8px rgb(0 0 0 / 3%);
+  cursor: pointer;
+}
+
+.mycontainer .action > button:active {
+  box-shadow: none;
+}
+
+.mycontainer .action > button:disabled {
+  box-shadow: none;
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.prize-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 50%;
+  padding: 50px;
+}
+
+.prize-container > h1 {
+  animation: textAnimation 2s infinite ease-in-out alternate;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.prize-container > h1 > img {
+  width: 50x;
+  height: 50px;
+  margin-left: 10px;
+  transform: translateY(-10px);
+}
+
+@keyframes textAnimation {
+  from {
+    letter-spacing: 1px;
+  }
+  to {
+    letter-spacing: 10px;
+  }
+}
+
+.prize-container > table {
+  width: 80%;
+  font-weight: bold;
+}
+
+.myalert {
+  position: fixed;
+  top: -130px;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ed4949cc;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  z-index: 9999;
+  transition: all 0.2s ease-in-out;
+}
+
+.alert {
+  position: fixed !important;
+  width: 100%;
+  bottom: -70px;
+  margin: 0 !important;
+  background: #71edb5 !important;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.warning {
+  background: #f5ff8b !important;
+}
+
+@keyframes appear {
+  0% {
+    bottom: -70px;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 100px 0;
+  }
+  .mycontainer {
+    gap: 20px;
+    padding: 20px;
+  }
+  .prize-container {
+    padding: 20px;
+  }
+  .prize-container > table {
+    width: 100%;
+  }
+}
+
+.firework {
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation-name: explode;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.firework-color-1 {
+  background-color: #f44336;
+}
+
+.firework-color-2 {
+  background-color: #e91e63;
+}
+
+.firework-color-3 {
+  background-color: #9c27b0;
+}
+
+.firework-color-4 {
+  background-color: #673ab7;
+}
+
+.firework-color-5 {
+  background-color: #3f51b5;
+}
